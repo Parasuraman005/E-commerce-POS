@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-inter: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-outfit: "Outfit", sans-serif;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    @apply bg-[#F2EFE7] text-[#1F2933] antialiased selection:bg-[#3368A0]/10 selection:text-[#3368A0];
+    line-height: 1.5;
+    font-size: 15px; /* Reduced base for higher density */
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 14.5px; /* Desktop specific density adjustment */
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit);
+    @apply tracking-tight font-bold text-[#1F2933];
+  }
+}
+
+@theme {
+  --color-brand-primary: #3368A0;
+  --color-brand-secondary: #66A3BF;
+  --color-brand-accent: #C8DFDB;
+  --color-brand-bg: #F2EFE7;
+  --color-brand-white: #FFFFFF;
+  --color-brand-text-primary: #1F2933;
+  --color-brand-text-secondary: #5B6570;
+  --color-brand-border: #E2E5E8;
+
+  --color-success: #2E7D32;
+  --color-error: #D64545;
+  --color-warning: #D97706;
+
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+  
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-wide: 0.025em;
+  --tracking-widest: 0.1em;
+}
+
+.bento-card {
+  @apply bg-brand-white border border-brand-border rounded-2xl p-5 overflow-hidden shadow-sm;
+}
+
+@media print {
+  body {
+    @apply !bg-white !text-black !p-0 !m-0;
+  }
+  .no-print {
+    @apply !hidden;
+  }
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+  * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+}

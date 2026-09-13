@@ -1,0 +1,6 @@
+{
+  "name": "SHOPHUB | Shop Online",
+  "description": "Explore quality products, discover the latest offers, and enjoy a simple and secure shopping experience at SHOPHUB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
